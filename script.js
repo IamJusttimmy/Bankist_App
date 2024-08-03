@@ -81,6 +81,19 @@ const displayMovement = function (movements) {
 };
 displayMovement(account1.movements);
 
+//Computing Username
+const user = 'Timilehin Micheal Feds';
+console.log(user);
+const username = user
+  .toLowerCase()
+  .split(' ')
+  .map(function () {
+    return name[0];
+  })
+  .join('');
+
+console.log(username);
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
@@ -94,3 +107,13 @@ const currencies = new Map([
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
+//Mapping method
+const eurToUsd = 1.1;
+
+// const movementsUSD = movements.map(function (mov) {
+//   return mov * eurToUsd;
+// });
+//Arrow function
+const movementsUSD = movements.map(mov => mov * eurToUsd);
+//console.log(movements);
+//console.log(movementsUSD);
