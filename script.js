@@ -91,7 +91,6 @@ const createUsernames = function (accs) {
   });
 };
 createUsernames(accounts);
-console.log(accounts);
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
@@ -116,3 +115,11 @@ const eurToUsd = 1.1;
 const movementsUSD = movements.map(mov => mov * eurToUsd);
 //console.log(movements);
 //console.log(movementsUSD);
+
+//Fiter method
+const deposit = movements.filter(mov => mov > 0);
+console.log(movements);
+console.log(deposit);
+
+const withdrawal = movements.filter(mov => mov < 0);
+console.log(withdrawal);
