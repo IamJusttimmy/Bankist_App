@@ -118,7 +118,6 @@ const movementsUSD = movements.map(mov => mov * eurToUsd);
 
 //Fiter method
 const deposit = movements.filter(mov => mov > 0);
-console.log(movements);
 console.log(deposit);
 
 const withdrawal = movements.filter(mov => mov < 0);
