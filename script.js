@@ -81,6 +81,12 @@ const displayMovement = function (movements) {
 };
 displayMovement(account1.movements);
 
+const calcDisplayBalance = function (movements) {
+  const balance = movements.reduce((acc, mov) => acc + mov, 0);
+  labelBalance.textContent = `${balance} EUR`;
+};
+calcDisplayBalance(account1.movements);
+
 const createUsernames = function (accs) {
   accs.forEach(function (acc) {
     acc.username = acc.owner
@@ -103,7 +109,7 @@ const currencies = new Map([
 ]);
 
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
-
+/*
 /////////////////////////////////////////////////
 //Mapping method
 const eurToUsd = 1.1;
@@ -122,3 +128,22 @@ console.log(deposit);
 
 const withdrawal = movements.filter(mov => mov < 0);
 console.log(withdrawal);
+*/
+
+console.log(movements);
+
+//accumulator(acc) -> SNOWBALL
+// const balance = movements.reduce(function (acc, cur, i, arr) {
+//   console.log(`Iteration ${i}: ${acc}`);
+//   return acc + cur;
+// }, 0);
+//Arrow function
+const balance = movements.reduce((acc, cur) => acc + cur, 0);
+console.log(balance);
+
+//Getting the max value
+const max = movements.reduce((acc, mov) => {
+  if (acc > mov) return acc;
+  else return mov;
+}, movements[0]);
+console.log(max);
