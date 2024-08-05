@@ -81,18 +81,17 @@ const displayMovement = function (movements) {
 };
 displayMovement(account1.movements);
 
-//Computing Username
-const user = 'Timilehin Micheal Feds';
-console.log(user);
-const username = user
-  .toLowerCase()
-  .split(' ')
-  .map(function () {
-    return name[0];
-  })
-  .join('');
-
-console.log(username);
+const createUsernames = function (accs) {
+  accs.forEach(function (acc) {
+    acc.username = acc.owner
+      .toLowerCase()
+      .split(' ')
+      .map(name => name[0])
+      .join('');
+  });
+};
+createUsernames(accounts);
+console.log(accounts);
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
